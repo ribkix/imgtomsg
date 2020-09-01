@@ -2,6 +2,7 @@
   <head>
     <title>Discord Attachment to Message Link</title>
     <link rel="stylesheet" href="http://imgtomsg.ml/bootstrap.min.css">
+    <script src="http://imgtomsg.ml/jquery-3.5.1.js"></script>
     <script src="http://imgtomsg.ml/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,7 @@
 </html>
 <script>
   function removeFile(str){
-    var strR;
+    var strR = "";
     
     for (var i = 0; i < str.length; i++){
       if (str.split("").reverse().join("").charAt(i) != "/"){
