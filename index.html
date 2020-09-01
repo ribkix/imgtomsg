@@ -31,14 +31,18 @@
 </html>
 <script>
   function removeFile(str){
+    console.log(str)
     var strT = str.split("").reverse().join("");
+    console.log(strT);
     var strR = "";
     
-    for (var i = 0; i < str.length; i++){
+    for (var i = 0; i < strT.length; i++){
       if (strT.charAt(i) != "/"){
         strR = strR.concat(str.charAt(i));
+        console.log(strR);
       } else {
         strR = strR.split("").reverse().join("");
+        console.log(strR);
         break;
       }
     }
