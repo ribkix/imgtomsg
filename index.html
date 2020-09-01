@@ -38,7 +38,7 @@
     
     for (var i = 0; i < strT.length; i++){
       if (strT.charAt(i) != "/"){
-        strR = strR.concat(str.charAt(i));
+        strR = strR.concat(strT.charAt(i));
         console.log(strR);
       } else {
         strR = strR.split("").reverse().join("");
@@ -51,6 +51,6 @@
   }
   
   function convert(){
-    document.getElementById("result").innerHTML = removeFile(document.getElementById("attachmentLink").value.replace("media.","").replace("attachments/",""));
+    document.getElementById("result").innerHTML = removeFile(document.getElementById("attachmentLink").value.replace("media.","").replace("attachments/","").replace("discordapp.net","discord.com/channels"));
   }
 </script>
