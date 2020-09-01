@@ -51,6 +51,6 @@
   }
   
   function convert(){
-    document.getElementById("result").innerHTML = removeFile(document.getElementById("attachmentLink").value.replace("media.","").replace("attachments/","").replace("discordapp.net","discord.com/channels"));
+    document.getElementById("result").innerHTML = document.getElementById("attachmentLink").value.replace("/" + removeFile(document.getElementById("attachmentLink").value.replace("media.","").replace("attachments/","").replace("discordapp.net","discord.com/channels")),"");
   }
 </script>
