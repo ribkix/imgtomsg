@@ -8,7 +8,6 @@
     <title>Discord Attachment to Message Link</title>
     <meta name="description" content="Convert a Discord attachment to a Discord message link.">
     <meta name="keywords" content="discord,attachment,link,message">
-    <meta name="theme-color" content="#FFFFFF">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -17,17 +16,35 @@
     
     <br><br><br>
     <center>
-      <form style="width:60%;" method="GET">
-        <fieldset>
-          <div class="form-group">
-            <label for="attachmentLink">Attachment Link</label>
-            <input type="text" class="form-control" id="attachmentLink" aria-describedby="attachmentLinkHelp" placeholder="https://media.discordapp.net/attachments/651020737540259844/750429123272376379/unknown.png">
-            <small id="attachmentLinkHelp" class="form-text text-muted">We'll never save your attachment.</small>
-          </div>
-          <button type="submit" class="btn btn-primary">Convert</button>
-        </fieldset>
-      </form>
+      <fieldset style="width:60%;">
+        <div class="form-group">
+          <label for="attachmentLink">Attachment Link</label>
+          <input type="text" class="form-control" id="attachmentLink" aria-describedby="attachmentLinkHelp" placeholder="https://media.discordapp.net/attachments/651020737540259844/750429123272376379/unknown.png">
+          <small id="attachmentLinkHelp" class="form-text text-muted">We'll never save your attachment.</small>
+        </div>
+        <button class="btn btn-primary" onclick="convert();">Convert</button>
+      </fieldset>
       <p id="result"></p>
     </center>
   </body>
 </html>
+<script>
+  function removeFile(str){
+    var strR;
+    
+    for (var i = 0; i < str.length; i++){
+      if (str.split("").reverse().join("").charAt(i) != "/"){
+        strR = strR.concat(idUser.charAt(i));
+      } else {
+        strR = strR.split("").reverse().join("");
+        break;
+      }
+    }
+  
+    return strR
+  }
+  
+  function convert(){
+    document.getElementById("result").innerHTML = removeFile(document.getElementById("attachmentLink").value.replace("media.","").replace("attachments/",""));
+  }
+</script>
