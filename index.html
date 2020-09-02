@@ -52,14 +52,14 @@
   
   function convert(){
     if (!document.getElementById("DM").checked){
-      if (document.getElementById("result").innerHTML.includes("discordapp.net")){
+      if (document.getElementById("attachmentLink").value.includes("discordapp.net")){
         document.getElementById("result").innerHTML = document.getElementById("attachmentLink").value.replace("/" + removeFile(document.getElementById("attachmentLink").value),"").replace("media.","").replace("attachments/","").replace("discordapp.net","discord.com/channels");
       } else {
         document.getElementById("result").innerHTML = document.getElementById("attachmentLink").value.replace("/" + removeFile(document.getElementById("attachmentLink").value),"").replace("media.","").replace("attachments/","").replace("cdn.discordapp.com","discord.com/channels");
       }
     } else {
-      if (document.getElementById("result").innerHTML.includes("discordapp.net")){
-        document.getElementById("result").innerHTML = document.getElementById("attachmentLink").value.replace("/" + removeFile(document.getElementById("attachmentLink").value),"").replace("media.discordapp.net","discord.com/channels/@me").replace("attachments/","");
+      if (document.getElementById("attachmentLink").value.includes("discordapp.net")){
+        document.getElementById("result").innerHTML = document.getElementById("attachmentLink").value.replace("/" + removeFile(document.getElementById("attachmentLink").value),"").replace("media.","").replace("attachments/","").replace("discordapp.net","discord.com/channels");
       } else {
         document.getElementById("result").innerHTML = document.getElementById("attachmentLink").value.replace("/" + removeFile(document.getElementById("attachmentLink").value),"").replace("media.","").replace("attachments/","").replace("cdn.discordapp.com","discord.com/channels/@me");
       }
